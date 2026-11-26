@@ -10,4 +10,8 @@ public interface UserService {
 
     @Transactional(readOnly = true)
     List<UserResponse> getAllUsers();
+    @Transactional
+    UserResponse registerUser(UserResponse userResponse);
+    @Transactional
+    UserResponse loginUser(UserResponse userResponse);
 }

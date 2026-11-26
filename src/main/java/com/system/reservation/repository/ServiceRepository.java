@@ -1,5 +1,9 @@
 package com.system.reservation.repository;
 
-public interface ServiceRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.system.reservation.model.Service;
+
+public interface ServiceRepository extends JpaRepository<Service, Long> {
 
 }
