@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.system.reservation.dto.ReservationRequest;
 import com.system.reservation.dto.ReservationResponse;
 import com.system.reservation.service.ReservationService;
 
@@ -40,13 +41,13 @@ public class ReservationController {
     }
 
     @PostMapping("/create")
-    public ReservationResponse createReservation(@RequestBody ReservationResponse reservationResponse) {
-        return reservationService.createReservation(reservationResponse);
+    public ReservationResponse createReservation(@RequestBody ReservationRequest reservationRequest) {
+        return reservationService.createReservation(reservationRequest);
     }
 
     @PutMapping("/update/{id}")
-    public ReservationResponse updateReservation(@PathVariable Long id, @RequestBody ReservationResponse reservationResponse) {
-        return reservationService.updateReservation(id, reservationResponse);
+    public ReservationResponse updateReservation(@PathVariable Long id, @RequestBody ReservationRequest reservationRequest) {
+        return reservationService.updateReservation(id, reservationRequest);
     }
 
     @DeleteMapping("/delete/{id}")

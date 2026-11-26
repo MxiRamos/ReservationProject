@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.system.reservation.dto.ReservationRequest;
 import com.system.reservation.dto.ReservationResponse;
 
 public interface ReservationService {
@@ -15,9 +16,9 @@ public interface ReservationService {
     @Transactional(readOnly = true)
     List<ReservationResponse> getAvailableReservationsByDate(String date);
     @Transactional
-    ReservationResponse createReservation(ReservationResponse reservationResponse);
+    ReservationResponse createReservation(ReservationRequest reservationRequest);
     @Transactional
-    ReservationResponse updateReservation(Long id, ReservationResponse reservationResponse);
+    ReservationResponse updateReservation(Long id, ReservationRequest reservationRequest);
     @Transactional
     void deleteReservation(Long id);
 }

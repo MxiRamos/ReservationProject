@@ -25,6 +25,12 @@ public class Reservation {
     public Reservation() {
     }
 
+    public Reservation(String date, String time, String status) {
+        this.date = date;
+        this.time = time;
+        this.status = status;
+    }
+
     public enum Status {
         PENDING,
         CONFIRMED,

@@ -2,6 +2,7 @@ package com.system.reservation.service;
 
 import java.util.List;
 
+import com.system.reservation.dto.UserRequest;
 import com.system.reservation.dto.UserResponse;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +12,7 @@ public interface UserService {
     @Transactional(readOnly = true)
     List<UserResponse> getAllUsers();
     @Transactional
-    UserResponse registerUser(UserResponse userResponse);
+    UserResponse registerUser(UserRequest userRequest);
     @Transactional
-    UserResponse loginUser(UserResponse userResponse);
+    UserResponse loginUser(UserRequest userRequest);
 }
