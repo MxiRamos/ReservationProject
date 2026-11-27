@@ -27,8 +27,8 @@ public class ReservationServiceImpl implements ReservationService {
                 .map(reservation -> new ReservationResponse(
                     reservation.getId(),
                     reservation.getDate(),
-                    reservation.getStatus(),
-                    reservation.getTime()
+                    reservation.getTime(),
+                    reservation.getStatus()
                 ))
                 .toList();
     }
@@ -40,8 +40,8 @@ public class ReservationServiceImpl implements ReservationService {
                 .map(reservation -> new ReservationResponse(
                     reservation.getId(),
                     reservation.getDate(),
-                    reservation.getStatus(),
-                    reservation.getTime()
+                    reservation.getTime(),
+                    reservation.getStatus()
                 ))
                 .orElseThrow(() -> new RuntimeException("Reservation not found with id: " + id));
     }
@@ -54,8 +54,8 @@ public class ReservationServiceImpl implements ReservationService {
                 .map(reservation -> new ReservationResponse(
                     reservation.getId(),
                     reservation.getDate(),
-                    reservation.getStatus(),
-                    reservation.getTime()
+                    reservation.getTime(),
+                    reservation.getStatus()
                 ))
                 .toList();
     }
@@ -72,8 +72,8 @@ public class ReservationServiceImpl implements ReservationService {
         return new ReservationResponse(
             savedReservation.getId(),
             savedReservation.getDate(),
-            savedReservation.getStatus(),
-            savedReservation.getTime()
+            savedReservation.getTime(),
+            savedReservation.getStatus()
         );
     }
 
@@ -89,8 +89,8 @@ public class ReservationServiceImpl implements ReservationService {
         return new ReservationResponse(
             updatedReservation.getId(),
             updatedReservation.getDate(),
-            updatedReservation.getStatus(),
-            updatedReservation.getTime()
+            updatedReservation.getTime(),
+            updatedReservation.getStatus()
         );
     }
 

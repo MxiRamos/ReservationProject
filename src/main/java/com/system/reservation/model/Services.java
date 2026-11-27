@@ -10,7 +10,7 @@ import lombok.Setter;
 @Entity
 @Getter 
 @Setter 
-public class Service {
+public class Services {
 
     @Id
     @GeneratedValue
@@ -20,6 +20,11 @@ public class Service {
     @Column(nullable = false)
     private String description;
 
-    public Service() {
+    public Services() {
+    }
+
+    public Services(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 }

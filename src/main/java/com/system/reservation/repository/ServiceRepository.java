@@ -4,9 +4,9 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.system.reservation.model.Service;
+import com.system.reservation.model.Services;
 
-public interface ServiceRepository extends JpaRepository<Service, Long> {
+public interface ServiceRepository extends JpaRepository<Services, Long> {
 
-    Optional<Service> findById(Long id);
+    Optional<Services> findById(Long id);
 }

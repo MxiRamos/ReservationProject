@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.system.reservation.dto.ServiceRequest;
 import com.system.reservation.dto.ServiceResponse;
 import com.system.reservation.exception.ResourceNotFoundException;
+import com.system.reservation.model.Reservation;
+import com.system.reservation.model.Services;
 import com.system.reservation.repository.ServiceRepository;
 import com.system.reservation.service.ServiceService;
 
@@ -38,5 +41,20 @@ public class ServiceServiceImpl implements ServiceService {
                     service.getName(),
                     service.getDescription()))
                 .orElseThrow(() -> new ResourceNotFoundException("Service not found with id: " + id));
+    }
+
+    @Override 
+    public ServiceResponse createService(ServiceRequest serviceRequest) {
+        // Implementation for creating a new service
+        Services service = new Services(
+            serviceRequest.name(),
+            serviceRequest.description()
+        );
+        Services savedService = serviceRepository.save(service);
+        return new ServiceResponse(
+            savedService.getId(),
+            savedService.getName(),
+            savedService.getDescription()
+        );
     }
 }
